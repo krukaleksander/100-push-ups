@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=latin-ext');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    background: url(../img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.wraper {
+    min-height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.685);
+
+
+
+}
+
+header {
+    background: #0078c875;
+    height: 100px;
+}
+
+header h1 {
+    color: whitesmoke;
+    line-height: 100px;
+    text-align: center;
+    text-shadow: 2px 2px 8px #0f0909;
+}
+
+.menuMobile {
+    display: none;
+}
+
+nav {
+    background-color: rgba(255, 255, 255, 0.884);
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    font-weight: bold;
+}
+
+.main-msg {
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+footer {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#weekNr,
+#target,
+#targetList,
+.time {
+    text-align: center;
+    width: 80%;
+    margin: 30px auto;
+}
+
+#target {
+    font-size: 20px;
+}
+
+.instr {
+    display: block;
+    font-size: 18px;
+    border: 2px dotted black;
+    padding: 5px;
+    margin: 10px auto;
+    font-weight: bolder;
+    color: #0077c8;
+    width: 500px;
+    text-align: center;
+}
+
+.round {
+    display: inline-block;
+    margin: 5px 10px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    line-height: 30px;
+}
+
+.time {
+    font-size: 30px;
+}
+
+.wrapBtn {
+    text-align: center;
+}
+
+button {
+    background: linear-gradient(rgb(0, 119, 200) 0%, rgba(24, 163, 168, 1) 100%);
+    text-decoration: none;
+    color: white;
+    padding: 10px 30px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.21);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.21);
+    border-radius: 4px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.amount {
+    margin-top: 20px;
+    font-size: 30px;
+    color: green;
+}
+
+.active {
+    color: white;
+    background-color: green;
+}
+
+.idea a {
+    text-decoration: none;
+    color: #e61d30;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+
+
+@media (min-width:1360px) and (min-height:1023px) {
+    nav ul li {
+        height: 80px;
+        line-height: 80px;
+        font-size: 25px;
+    }
+
+    .main-msg {
+        width: 85%;
+        margin: 10px auto;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    #target {
+        font-size: 30px;
+    }
+
+    .instr {
+        font-size: 30px;
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .round {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 25px;
+    }
+
+    .time {
+        font-size: 40px;
+        margin: 20px auto;
+    }
+
+    button {
+        font-size: 30px;
+    }
+
+    .amount {
+        font-size: 40px;
+        margin: 20px auto;
+    }
+
+    footer {
+        margin-top: 50px;
+        text-align: center;
+        font-size: 30px;
+    }
+}
+
+@media (min-width:1024px) and (orientation:portrait) {
+    nav ul li {
+        height: 80px;
+        line-height: 80px;
+        font-size: 25px;
+    }
+
+    .main-msg {
+        width: 85%;
+        margin: 25px auto;
+        font-size: 30px;
+    }
+
+    #target {
+        font-size: 30px;
+    }
+
+    .instr {
+        font-size: 30px;
+        width: 80%;
+        margin: 50px auto;
+    }
+
+    .round {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 25px;
+    }
+
+    .time {
+        font-size: 60px;
+        margin: 35px auto;
+    }
+
+    button {
+        font-size: 40px;
+    }
+
+    .amount {
+        font-size: 40px;
+        margin: 30px auto;
+    }
+
+    footer {
+        margin-top: 200px;
+        text-align: center;
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 765px) and (orientation:portrait) {
+    .round {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 25px;
+    }
+
+    button {
+        font-size: 30px;
+    }
+
+    footer {
+        margin-top: 150px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 600px) and (orientation:landscape) {
+    .main-msg {
+        width: 90%;
+        margin: 10px auto;
+        font-size: 20px;
+    }
+
+    #target {
+        font-size: 20px;
+        margin: 15px auto;
+    }
+
+    #weekNr {
+        font-size: 30px;
+        margin: 10px auto;
+    }
+
+    .instr {
+        font-size: 16px;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .round {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 25px;
+
+    }
+
+    #targetList {
+        margin: 10px auto;
+    }
+
+    .time {
+        font-size: 30px;
+        margin: 10px auto;
+    }
+
+    button {
+        font-size: 25px;
+    }
+
+    .amount {
+        font-size: 20px;
+        margin: 10px auto;
+    }
+
+    footer {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 359px) and (orientation:portrait) {
+    header {
+        height: 80px;
+    }
+
+    header h1 {
+        font-size: 30px;
+        line-height: 80px;
+    }
+
+    .main-msg {
+        width: 90%;
+        margin: 10px auto;
+        font-size: 16px;
+    }
+
+    #target {
+        width: 90%;
+        font-size: 16px;
+        margin: 15px auto;
+    }
+
+    #weekNr {
+        font-size: 25px;
+        margin: 10px auto;
+    }
+
+    .instr {
+        font-size: 16px;
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .round {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 20px;
+
+    }
+
+    #targetList {
+        margin: 10px auto;
+    }
+
+    .time {
+        font-size: 30px;
+        margin: 10px auto;
+    }
+
+    button {
+        font-size: 15px;
+    }
+
+    .amount {
+        font-size: 20px;
+        margin: 10px auto;
+    }
+
+    footer {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 320px) and (orientation:portrait) {
+
+    header h1 {
+        font-size: 25px;
+        line-height: 80px;
+    }
+
+    .main-msg {
+        width: 90%;
+        margin: 10px auto;
+        font-size: 16px;
+    }
+
+    #target {
+        width: 90%;
+        font-size: 16px;
+        margin: 15px auto;
+    }
+
+    #weekNr {
+        font-size: 25px;
+        margin: 10px auto;
+    }
+
+    .instr {
+        font-size: 16px;
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .round {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+        margin: 5px 5px;
+
+
+    }
+
+    #targetList {
+        margin: 10px auto;
+    }
+
+    .time {
+        font-size: 30px;
+        margin: 10px auto;
+    }
+
+    button {
+        font-size: 15px;
+    }
+
+    .amount {
+        font-size: 20px;
+        margin: 10px auto;
+    }
+
+    footer {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
+    .menuMobile {
+        display: block;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        font-weight: bolder;
+    }
+
+    nav {
+        position: relative;
+
+    }
+
+    .menuMobileCont,
+    .activeMenu {
+        flex-direction: column;
+        position: absolute;
+        top: 42px;
+        width: 100%;
+        text-align: center;
+        background: #0078c8d0;
+        color: white;
+        font-weight: bolder;
+        transition: .3s;
+    }
+
+    li {
+        border-bottom: 2px solid white;
+    }
+
+    .menuMobileCont {
+        left: -100vw;
+    }
+
+    .activeMenu {
+        left: 0px;
+    }
+}

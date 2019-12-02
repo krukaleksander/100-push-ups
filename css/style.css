@@ -37,7 +37,7 @@ header h1 {
     text-shadow: 2px 2px 8px #0f0909;
 }
 
-.menuMobile {
+.menu-mobile {
     display: none;
 }
 
@@ -78,9 +78,9 @@ footer {
     text-align: center;
 }
 
-#weekNr,
+#week-nr,
 #target,
-#targetList,
+#target-list,
 .time {
     text-align: center;
     width: 80%;
@@ -116,7 +116,7 @@ footer {
     font-size: 30px;
 }
 
-.wrapBtn {
+.wrap-btn {
     text-align: center;
 }
 
@@ -291,7 +291,7 @@ button:hover {
         margin: 15px auto;
     }
 
-    #weekNr {
+    #week-nr {
         font-size: 30px;
         margin: 10px auto;
     }
@@ -310,7 +310,7 @@ button:hover {
 
     }
 
-    #targetList {
+    #target-list {
         margin: 10px auto;
     }
 
@@ -356,7 +356,7 @@ button:hover {
         margin: 15px auto;
     }
 
-    #weekNr {
+    #week-nr {
         font-size: 25px;
         margin: 10px auto;
     }
@@ -375,7 +375,7 @@ button:hover {
 
     }
 
-    #targetList {
+    #target-list {
         margin: 10px auto;
     }
 
@@ -418,7 +418,7 @@ button:hover {
         margin: 15px auto;
     }
 
-    #weekNr {
+    #week-nr {
         font-size: 25px;
         margin: 10px auto;
     }
@@ -439,7 +439,7 @@ button:hover {
 
     }
 
-    #targetList {
+    #target-list {
         margin: 10px auto;
     }
 
@@ -462,7 +462,7 @@ button:hover {
         font-size: 15px;
     }
 
-    .menuMobile {
+    .menu-mobile {
         display: block;
         text-align: center;
         height: 40px;
@@ -475,8 +475,8 @@ button:hover {
 
     }
 
-    .menuMobileCont,
-    .activeMenu {
+    .menu-mobile-cont,
+    .active-menu {
         flex-direction: column;
         position: absolute;
         top: 42px;
@@ -492,11 +492,11 @@ button:hover {
         border-bottom: 2px solid white;
     }
 
-    .menuMobileCont {
+    .menu-mobile-cont {
         left: -100vw;
     }
 
-    .activeMenu {
+    .active-menu {
         left: 0px;
     }
 }

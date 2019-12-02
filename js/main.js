@@ -1,6 +1,17 @@
 let navi, weekName, target, targetList, exercises, time, goal, btn, timeVal, idI, activeNum, targetNr;
 domMaker(); // funkcja wiążąca dom z resztą
 // bazy z tekstami
+const weeks = {
+    finalTargets: [13, 20, 28, 40, 50, 60],
+    targets: [
+        [11, 12, 9, 8],
+        [16, 17, 14, 14],
+        [22, 30, 20, 20],
+        [29, 33, 29, 29],
+        [20, 20, 24, 24, 20, 20, 22],
+        [26, 26, 33, 33, 26, 26, 22, 22]
+    ]
+}
 const weekDesc = {
     week1: `<strong>Cel: </strong>Możesz zrobić co najmniej 13 pompek po zakończeniu 4
 serii, w których zrobiłeś kolejno 11, 12, 9 i 8 pompek. Przerwy między seriami trwają 45 sekund.`,
@@ -55,10 +66,10 @@ const targets = {
 
 function domMaker() {
     navi = [...document.querySelectorAll('li')]; // nawigacja
-    weekName = document.querySelector('#weekNr'); //nagłówek z tygodniem
+    weekName = document.querySelector('#week-nr'); //nagłówek z tygodniem
     target = document.querySelector('#target'); // cel tygodnia
-    targetNr = document.querySelector('.amNr'); //ile pompek w rundzie
-    targetList = document.querySelector('#targetList'); // lista celów
+    targetNr = document.querySelector('.am-nr'); //ile pompek w rundzie
+    targetList = document.querySelector('#target-list'); // lista celów
     exercises = [...document.querySelectorAll('.round')]; // cwiczenia
     time = document.querySelector('.sec') // zegar    
     goal = document.querySelector('.amount');
@@ -109,12 +120,15 @@ const setActive = () => { //robi cwiczenia na zielono
 for (i = 0; i < navi.length; i++) { // zmienia nazwe tygodnia, opis, liste cwiczen
     navi[i].addEventListener('click', function () {
         weekName.textContent = this.textContent;
-        target.innerHTML = weekDesc[this.id];
+        target.innerHTML = `<strong>Cel: </strong>Możesz zrobić co najmniej ${weeks["finalTargets"][this.dataset.nr]} pompek po zakończeniu 4
+        serii, w których zrobiłeś kolejno ${weeks["targets"][this.dataset.nr].join(", ")} pompek. Przerwy między seriami trwają 45 sekund.`;
+        // ***********************************************************************************************
+        // to jest kod nad którym musisz popracować!       
         targetList.innerHTML = targets[this.id];
-        goal.innerHTML = `Wykonaj <span class="amNr"></span> pompek <span>.</span>
+        goal.innerHTML = `Wykonaj <span class="am-nr"></span> pompek <span>.</span>
         <span>.</span>
         <span>.</span>`;
-        document.querySelector('.menuMobileCont').classList.remove('activeMenu');
+        document.querySelector('.menu-mobile-cont').classList.remove('active-menu');
         clearing();
         domMaker();
 
@@ -124,7 +138,7 @@ for (i = 0; i < navi.length; i++) { // zmienia nazwe tygodnia, opis, liste cwicz
 
 btn.addEventListener('click', mainFunc);
 // menu
-document.querySelector('.menuMobile').addEventListener('click', () => {
-    document.querySelector('.menuMobileCont').classList.add('activeMenu');
+document.querySelector('.menu-mobile').addEventListener('click', () => {
+    document.querySelector('.menu-mobile-cont').classList.add('active-menu');
 })
 // pamiętaj, że jak deklarujesz w funkcji zmienne to ona je tworzy we własnym scope

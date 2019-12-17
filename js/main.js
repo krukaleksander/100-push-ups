@@ -1,4 +1,5 @@
 let navi, weekName, target, targetList, exercises, time, goal, btn, timeVal, idI, activeNum, targetNr;
+activeNum = 0; //numer cwiczenia
 domMaker(); // funkcja wiążąca dom z resztą
 const weeks = {
     finalTargets: [13, 20, 28, 40, 50, 60],
@@ -26,16 +27,17 @@ function domMaker() {
     // zmienne potzebne do pracy funkcji
     timeVal = 4500; //czas jaki ma odliczac stoper w ms
     idI; // musze przypisać do tej zmiennej interwał bo inaczej go nie zatrzymam
-    activeNum = 0; //numer cwiczenia
-    targetNr.textContent = exercises[0].textContent; //wprowadza pierwsza runde pompek do tekstu na dole
 };
 
 // funkcje
 const mainFunc = () => { //funkcja zarządzająca - ona odpala interwał
 
     if (activeNum < exercises.length - 1) {
-        idI = setInterval(start, 10); //włącza interwał
+        idI = setInterval(start, 10); //włącza interwał       
         targetNr.textContent = exercises[activeNum + 1].textContent;
+
+    } else if (activeNum == exercises.length) {
+        return
     }
     if (activeNum < exercises.length) { // ile na zielono
         setActive();
@@ -64,11 +66,14 @@ const start = () => { //funkcja samego stopera
 const setActive = () => { //robi cwiczenia na zielono
     domMaker();
     exercises[activeNum].classList.add('active');
+
 }
 
 for (i = 0; i < navi.length; i++) { // zmienia nazwe tygodnia, opis, liste cwiczen
     navi[i].addEventListener('click', function () {
+        activeNum = 0;
         clearing();
+        targetNr.textContent = exercises[0].textContent;
         weekName.textContent = this.textContent;
         target.innerHTML = `<strong>Cel: </strong>Możesz zrobić co najmniej ${weeks["finalTargets"][this.dataset.nr]} pompek po zakończeniu 4
         serii, w których zrobiłeś kolejno ${weeks["targets"][this.dataset.nr].join(", ")} pompek. Przerwy między seriami trwają 45 sekund.`;
@@ -81,9 +86,10 @@ for (i = 0; i < navi.length; i++) { // zmienia nazwe tygodnia, opis, liste cwicz
         goal.innerHTML = `Wykonaj <span class="am-nr"></span> pompek <span>.</span>
         <span>.</span>
         <span>.</span>`;
-        document.querySelector('.menu-mobile-cont').classList.remove('active-menu');
+        document.querySelector('.menu-mobile-content').classList.remove('active-menu');
         clearing();
         domMaker();
+        targetNr.textContent = exercises[0].textContent;
 
     })
 }
@@ -92,12 +98,6 @@ for (i = 0; i < navi.length; i++) { // zmienia nazwe tygodnia, opis, liste cwicz
 btn.addEventListener('click', mainFunc);
 // menu
 document.querySelector('.menu-mobile').addEventListener('click', () => {
-    document.querySelector('.menu-mobile-cont').classList.add('active-menu');
+    document.querySelector('.menu-mobile-content').classList.add('active-menu');
 })
-// pamiętaj, że jak deklarujesz w funkcji zmienne to ona je tworzy we własnym scope
-
-
-// menu mobilne wyrzuca błąd w konsoli - usunąć,
-// ćwiczenie na dole - musi wiedzieć od początku, które pompki masz zrobić
-// ruszaj z scss
-// dodaj okienko w którym ładnie będzie widać ile jest pompek do zrobienia albo jakoś to wyraźnie oznacz.
+// po wykonaniu treningu ma wyskoczyć okienko z gratulacjami i to już naprawde koniec projektu, nie ma co.

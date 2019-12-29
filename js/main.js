@@ -27,7 +27,7 @@ function domMaker() {
     congrats = document.querySelector('.congrats'); // okienko z gratulacjami
     // koniec elenty dom
     // zmienne potzebne do pracy funkcji
-    timeVal = 45; //czas jaki ma odliczac stoper w ms
+    timeVal = 4500; //czas jaki ma odliczac stoper w ms
     idI; // musze przypisać do tej zmiennej interwał bo inaczej go nie zatrzymam
 };
 
@@ -56,7 +56,7 @@ const mainFunc = () => { //funkcja zarządzająca - ona odpala interwał
 const clearing = () => { // funkcja czyszcząca interwał
     clearInterval(idI); //zatrzymuje interwał
     time.textContent = "00.00"
-    timeVal = 45;
+    timeVal = 4500;
     btn.disabled = false; //włączam guzik
 }
 const start = () => { //funkcja samego stopera

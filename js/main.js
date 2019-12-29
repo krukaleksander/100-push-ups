@@ -1,4 +1,4 @@
-let navi, weekName, target, targetList, exercises, time, goal, btn, timeVal, idI, activeNum, targetNr;
+let navi, weekName, target, targetList, exercises, time, goal, btn, timeVal, idI, activeNum, targetNr, congrats, blured;
 activeNum = 0; //numer cwiczenia
 domMaker(); // funkcja wiążąca dom z resztą
 const weeks = {
@@ -23,9 +23,11 @@ function domMaker() {
     time = document.querySelector('.sec') // zegar    
     goal = document.querySelector('.amount');
     btn = document.querySelector('.start'); // guzik startu
+    blured = document.querySelector('.blured'); // div zasłaniając resztę
+    congrats = document.querySelector('.congrats'); // okienko z gratulacjami
     // koniec elenty dom
     // zmienne potzebne do pracy funkcji
-    timeVal = 4500; //czas jaki ma odliczac stoper w ms
+    timeVal = 45; //czas jaki ma odliczac stoper w ms
     idI; // musze przypisać do tej zmiennej interwał bo inaczej go nie zatrzymam
 };
 
@@ -43,7 +45,9 @@ const mainFunc = () => { //funkcja zarządzająca - ona odpala interwał
         setActive();
         activeNum++;
         if (activeNum == exercises.length) {
-            goal.innerHTML = 'Gratulacje! Dzisiejszy trening został wykonany!'
+            // goal.innerHTML = 'Gratulacje! Dzisiejszy trening został wykonany!'
+            blured.classList.add('active');
+            congrats.classList.add('active');
         }
     } else {
         activeNum = 0;
@@ -52,7 +56,7 @@ const mainFunc = () => { //funkcja zarządzająca - ona odpala interwał
 const clearing = () => { // funkcja czyszcząca interwał
     clearInterval(idI); //zatrzymuje interwał
     time.textContent = "00.00"
-    timeVal = 4500;
+    timeVal = 45;
     btn.disabled = false; //włączam guzik
 }
 const start = () => { //funkcja samego stopera
@@ -100,4 +104,8 @@ btn.addEventListener('click', mainFunc);
 document.querySelector('.menu-mobile').addEventListener('click', () => {
     document.querySelector('.menu-mobile-content').classList.add('active-menu');
 })
-// po wykonaniu treningu ma wyskoczyć okienko z gratulacjami i to już naprawde koniec projektu, nie ma co.
+
+document.querySelector('.close-congrats').addEventListener('click', () => {
+    blured.classList.remove('active');
+    congrats.classList.remove('active');
+})
